@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react';
-import { UserRole } from './pollTypes';
+import { UserRole, Poll, VotingMethod } from './pollTypes';
 
 // Mock user database - in a real app this would come from a backend
 const MOCK_USERS = [
@@ -103,7 +103,7 @@ export const useAuth = () => {
 };
 
 // Mock database of polls
-export const MOCK_POLLS = [
+export const MOCK_POLLS: Poll[] = [
   {
     id: '1',
     title: 'Best Programming Language 2024',
@@ -119,7 +119,7 @@ export const MOCK_POLLS = [
       { id: '4', text: 'Go', votes: 65 },
       { id: '5', text: 'TypeScript', votes: 110 }
     ],
-    votingMethod: 'single-choice',
+    votingMethod: 'single-choice' as VotingMethod,
     allowAnonymous: true,
     requireVerification: false,
     status: 'active',
@@ -139,7 +139,7 @@ export const MOCK_POLLS = [
       { id: '3', text: 'Microsoft Azure', votes: 70 },
       { id: '4', text: 'Digital Ocean', votes: 30 }
     ],
-    votingMethod: 'single-choice',
+    votingMethod: 'single-choice' as VotingMethod,
     allowAnonymous: false,
     requireVerification: true,
     status: 'active',
@@ -158,7 +158,7 @@ export const MOCK_POLLS = [
       { id: '2', text: 'Office Work', votes: 85 },
       { id: '3', text: 'Hybrid Model', votes: 175 }
     ],
-    votingMethod: 'single-choice',
+    votingMethod: 'single-choice' as VotingMethod,
     allowAnonymous: true,
     requireVerification: false,
     status: 'active',
