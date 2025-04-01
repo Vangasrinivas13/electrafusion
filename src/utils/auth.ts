@@ -1,6 +1,5 @@
-
 import { useState, useEffect } from 'react';
-import { UserRole, Poll, VotingMethod } from './pollTypes';
+import { UserRole, Poll, VotingMethod, ElectionType } from './pollTypes';
 
 // Mock user database - in a real app this would come from a backend
 const MOCK_USERS = [
@@ -163,5 +162,51 @@ export const MOCK_POLLS: Poll[] = [
     requireVerification: false,
     status: 'active',
     totalVotes: 470
+  },
+  {
+    id: '4',
+    title: 'MP Election 2024 - Central District',
+    description: 'Vote for your Member of Parliament representative for Central District',
+    createdBy: '1',
+    createdAt: new Date('2024-04-10'),
+    startDate: new Date('2024-04-15'),
+    endDate: new Date('2024-06-30'),
+    options: [
+      { 
+        id: '1', 
+        text: 'Sarah Johnson', 
+        votes: 235,
+        party: 'Progressive Party',
+        candidateInfo: 'Former mayor with 10 years of public service experience'
+      },
+      { 
+        id: '2', 
+        text: 'Michael Thompson', 
+        votes: 189,
+        party: 'Conservative Alliance',
+        candidateInfo: 'Business leader focused on economic growth'
+      },
+      { 
+        id: '3', 
+        text: 'Priya Patel', 
+        votes: 156,
+        party: 'Liberal Democrats',
+        candidateInfo: 'Human rights lawyer and community activist'
+      },
+      { 
+        id: '4', 
+        text: 'James Wilson', 
+        votes: 120,
+        party: 'Green Future',
+        candidateInfo: 'Environmental scientist and university professor'
+      }
+    ],
+    votingMethod: 'single-choice' as VotingMethod,
+    allowAnonymous: false,
+    requireVerification: true,
+    status: 'active',
+    totalVotes: 700,
+    electionType: 'mp' as ElectionType,
+    constituency: 'Central District'
   }
 ];

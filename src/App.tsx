@@ -10,6 +10,7 @@ import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
 import CreatePoll from "./pages/CreatePoll";
 import ViewPoll from "./pages/ViewPoll";
+import MPElections from "./pages/MPElections";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -27,6 +28,7 @@ const App = () => (
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/create-poll" element={<CreatePoll />} />
           <Route path="/polls/:pollId" element={<ViewPoll />} />
+          <Route path="/mp-elections" element={<MPElections />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

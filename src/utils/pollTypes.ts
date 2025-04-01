@@ -3,10 +3,14 @@ export type VotingMethod = 'single-choice' | 'multiple-choice' | 'ranked-choice'
 
 export type PollStatus = 'draft' | 'active' | 'closed';
 
+export type ElectionType = 'general' | 'mp' | 'local' | 'referendum';
+
 export interface PollOption {
   id: string;
   text: string;
   votes: number;
+  party?: string;
+  candidateInfo?: string;
 }
 
 export interface Vote {
@@ -33,6 +37,8 @@ export interface Poll {
   status: PollStatus;
   restrictedToRegion?: string;
   totalVotes: number;
+  electionType?: ElectionType;
+  constituency?: string;
 }
 
 export interface UserRole {
